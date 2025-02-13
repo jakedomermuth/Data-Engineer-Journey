@@ -1,4 +1,4 @@
---Window funtions advanced
+--Window functions advanced
 
 
 --Total number of animals column with a filter
@@ -21,7 +21,7 @@ WHERE admission_date >= '2017-01-01'
 ORDER BY admission_date
 
 
---Looking at the days an anaimal has been there since the newest arrival of thier species.
+--Looking at the days an animal has been there since the newest arrival of their species.
 SELECT 
 	Species,
 	name,
