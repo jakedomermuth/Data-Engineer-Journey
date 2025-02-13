@@ -1,8 +1,8 @@
 
 
 
--- Retriving demographic information across employee and department tables to return result of
---users that make less than 120000 salalry
+-- Retrieving demographic information across employee and department tables to return results of
+--users that make less than 120000 salary
 SELECT e.last_name,
 	e.email,
 	cd.department_name
@@ -18,12 +18,12 @@ SELECT
 FROM data_sci.employees e;
 
 
---Improving email format only taking first 5 letters of last name and changing the order.
+--Improving email format by only taking the first 5 letters of the last name and changing the order.
 SELECT concat(substring(e.last_name, 1, 5),'-', e.id, '@work.com')
 FROM data_sci.employees e;
 
 
--- Retreiving all job titles with assistant in them
+-- Retrieving all job titles with assistance in them
 SELECT *
 FROM(
 	SELECT *, UPPER(job_title) as job --subquery creates formatted job title column 
@@ -32,7 +32,7 @@ WHERE job like '%ASSISTANT%';
 
 
 
---retriving each record of employee with thier avg department salary
+--retrieving each record of employees with thier average department salary
 SELECT
 	e1.last_name,
 	e1.salary,
@@ -40,7 +40,7 @@ SELECT
 	(SELECT AVG(e2.salary) FROM data_sci.employees e2 WHERE e2.department_id = e1.department_id)
 FROM data_sci.employees e1;
 
---Same query as above but improving time efficency and readability
+--Same query as above but improving time efficiency and readability
 SELECT
 	last_name,
 	salary,
