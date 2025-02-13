@@ -1,4 +1,4 @@
---Using rollup for multiple aggergations and totals
+--Using rollup for multiple aggregations and totals
 SELECT
 	cr.country_name,
 	cr.region_name,
@@ -9,8 +9,7 @@ ON e.region_id = cr.id
 GROUP BY ROLLUP(country_name, region_name);
 
 
---Count of employees in departments where the total salary paid in that 
---department is greater that 5
+--Count of employees in departments where the total salary paid in that department is greater than 5
 SELECT
 	SUM(salary),
 	Count(*),
@@ -21,7 +20,7 @@ HAVING SUM(salary) > 5000000
 ORDER BY SUM(salary) desc;
 
 
---Returning employee information and the min salary by department
+--Returning employee information and the minimum salary by department
 SELECT
 	last_name,
 	job_title,
@@ -48,7 +47,7 @@ SELECT
 FROM data_sci.employees
 
 
---Looking at the salary gap between each employee and the empolyee with the closes salary to them
+--Looking at the salary gap between each employee and the employee with the closes salary to them
 --Showing the largest disparities in pay gaps
 SELECT e2.*,
 	e2.salary - e2.next_salary as salary_gap
